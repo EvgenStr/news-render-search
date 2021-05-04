@@ -4,22 +4,17 @@
 const newsElements = newsArray.map((news) => createNews(news));
 newsContainer.append(...newsElements);
 
-function createNews(news) {
+function createNews({ title, date, content }) {
   return createElement(
     "article",
-    { classNames: ["newsWrap"] }, createNewsBody(news)
+    { classNames: ["newsWrap"] }, createElement('h3',
+      { classNames: ["newsTitle"] }, document.createTextNode(title || ""),
+      createElement('span',
+        { classNames: ["newsDate"] }), document.createTextNode(date || ""),
+      createElement('p',
+        { classNames: ["newsContent"] }, document.createTextNode(content || "")))
   );
 }
-
-function createNewsBody({ title, date, content }) {
-  const newsBody = createElement('h3',
-    { classNames: ["newsTitle"] }, document.createTextNode(title || ""),
-    createElement('span',
-      { classNames: ["newsDate"] }), document.createTextNode(date || ""),
-    createElement('p',
-      { classNames: ["newsContent"] }))
-}
-
 
 
 function createElement(
