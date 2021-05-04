@@ -7,13 +7,10 @@ newsContainer.append(...newsElements);
 function renderNews({ title, date, content }) {
   return createElement(
     "article",
-    { classNames: ["newsWrap"] }, createElement('h3',
-      { classNames: ["newsTitle"] }, document.createTextNode(title || ""),
-      createElement('span',
-        { classNames: ["newsDate"] }), document.createTextNode(date || ""),
-      createElement('p',
-        { classNames: ["newsContent"] }, document.createTextNode(content || "")))
-  );
+    { classNames: ["newsWrap"] },
+    createElement('h3', { classNames: ["newsTitle"] }, document.createTextNode(title || "")),
+    createElement('span', { classNames: ["newsDate"] }, document.createTextNode(date || "")),
+    createElement('p', { classNames: ["newsContent"] }, document.createTextNode(content || "")));
 }
 
 

@@ -21,12 +21,15 @@
       <input id="search" type="text">
     </div>
   </header>
-  <section>
-    <form action="">
+  <section class="formSection">
+    <form id='createNews'>
+      <h2 class="formHead">Add new Post</h2>
       <input type="text" name="title">
-      <textarea name="content" id="" cols="30" rows="10"></textarea>
-      <button type="submit">Publish</button>
-      <button type="reset">Cancel</button>
+      <textarea name="content" id="content" cols="30" rows="10" draggable="false"></textarea>
+      <div class="btnsContainer">
+        <button type="submit">Publish</button>
+        <button type="reset">Cancel</button>
+      </div>
     </form>
   </section>
   <section class="news">

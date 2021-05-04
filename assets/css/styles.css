@@ -1,20 +1,63 @@
+:root {
+  --content-width: 80%;
+}
+
 * {
   box-sizing: border-box;
 }
-
+/* header */
 .pageHeader {
   display: flex;
   height: 100px;
   width: 100%;
   background-color: rgb(97, 145, 107);
 }
-.headWrap{
+.headWrap {
   display: flex;
   justify-content: space-between;
   align-self: center;
-  width: 80%;
+  width: var(--content-width);
   margin: 0 auto;
 }
 .logo {
   font-family: "Russo One", sans-serif;
+  font-size: 2rem;
+}
+
+/* form create news */
+.formSection {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 25px 0;
+}
+#createNews {
+  display: flex;
+  flex-direction: column;
+  width: var(--content-width);
+  margin: 0 auto;
+  text-align: center;
+}
+#createNews > * {
+  margin: 10px 0;
+}
+.formHead {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#content{
+  resize: none;
+}
+.btnsContainer{
+  display: flex;
+  justify-content: space-around;
+}
+
+/* news section */
+.news{
+  width: var(--content-width);
+  margin: 0 auto;
+}
+.newsTitle{
+  font-size: 1.5rem;
+  font-weight: bold;
 }
