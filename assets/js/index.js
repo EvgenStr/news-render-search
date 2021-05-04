@@ -11,12 +11,14 @@ formCreate.addEventListener('submit', addNews)
 
 function addNews(e) {
   e.preventDefault();
-  const data = new FormData(formCreate);
-
-  console.log(dataArray)
+  const data = new FormData(e.target);
+  const newItem = {};
+  // console.log(dataArray)
   for (const [name, value] of data) {
-    console.log(name, value)
+    newItem[name] = value;
   }
+  newItem.date=getDate();
+
 };
 
 
@@ -52,4 +54,13 @@ function createElement(
 
   elem.append(...children);
   return elem;
+}
+
+// UTILS
+function getDate() {
+  function format(m) {
+     let f = new Intl.DateTimeFormat('en', m);
+     return f.format(new Date);
+  }
+  return [{ day: 'numeric' }, { month: 'short' }, { year: 'numeric' }].map(format).join('-');
 }
