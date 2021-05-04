@@ -75,15 +75,17 @@ body > h1 {
   width: var(--content-width);
   margin: 25px auto;
   padding: 15px 0;
+
+}
+.newsWrap {
+  /* width: var(--content-width); */
+  margin: 25px auto;
+  padding: 0 10%;
   background-color: var(--white-color);
   box-shadow: var(--box-shadow);
 }
-.newsWrap {
-  width: var(--content-width);
-  margin: 25px auto;
-}
 .newsWrap > * {
-  padding: 10px 0;
+  padding: 15px 0;
 }
 .newsTitle {
   font-size: 1.5rem;

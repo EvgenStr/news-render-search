@@ -9,11 +9,13 @@ renderNews(newsContainer, newsData);
 
 // handlers
 formCreate.addEventListener('submit', addNews);
-searchField.addEventListener('change', searchFromTitle);
+searchField.addEventListener('keyup', searchFromTitle);
+
 //functions
 
-function searchFromTitle(){
-  
+function searchFromTitle({target:{value}}){
+  if(!value) renderNews(newsContainer, newsData);
+  renderNews(newsContainer, newsData.filter(item=>item.title.includes(value)))
 }
 
 function addNews(e) {
