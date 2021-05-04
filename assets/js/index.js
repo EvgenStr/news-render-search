@@ -25,8 +25,13 @@ function addNews(e) {
 
 function searchFromTitle({ target: { value } }) {
   if (!value) renderNews(newsContainer, newsData);
-  renderNews(newsContainer, newsData.filter(item => item.title.toLowerCase().includes(value.toLowerCase())));
+  function search(item) {
+    return item.title.toLowerCase().includes(value.toLowerCase());
+    // return item.title.toLowerCase().includes(value.toLowerCase()) || item.content.toLowerCase().includes(value.toLowerCase());
+  }
+  renderNews(newsContainer, newsData.filter(search));
 }
+
 
 //FUNCTIONS
 function renderNews(rootElem, array) {
