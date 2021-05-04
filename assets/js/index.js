@@ -1,28 +1,35 @@
 'use strict';
 
 const formCreate = document.getElementById('createNews');
-const newsContainer = document.querySelector('.news')
+const newsContainer = document.querySelector('.news');
+const searchField = document.getElementById('search');
 
-
-// const newsElements = newsData.map((news) => createNews(news));
-// newsContainer.append(...newsElements);
+//init render
 renderNews(newsContainer, newsData);
-formCreate.addEventListener('submit', addNews)
+
+// handlers
+formCreate.addEventListener('submit', addNews);
+searchField.addEventListener('change', searchFromTitle);
+//functions
+
+function searchFromTitle(){
+  
+}
 
 function addNews(e) {
   e.preventDefault();
   const data = new FormData(e.target);
   const newItem = {};
-  // console.log(dataArray)
   for (const [name, value] of data) {
     newItem[name] = value;
   }
-  newItem.date=getDate();
-
+  newItem.date = getDate();
+  newsData.push(newItem);
+  renderNews(newsContainer, newsData);
 };
 
-
 function renderNews(rootElem, array) {
+  rootElem.textContent = "";
   const newsElements = array.map((news) => createNews(news));
   rootElem.append(...newsElements);
 }
@@ -59,8 +66,8 @@ function createElement(
 // UTILS
 function getDate() {
   function format(m) {
-     let f = new Intl.DateTimeFormat('en', m);
-     return f.format(new Date);
+    let f = new Intl.DateTimeFormat('en', m);
+    return f.format(new Date);
   }
   return [{ day: 'numeric' }, { month: 'short' }, { year: 'numeric' }].map(format).join('-');
 }
