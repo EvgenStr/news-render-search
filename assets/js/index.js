@@ -1,7 +1,17 @@
 'use strict';
 
-const newsElements = newsData.map((news) => createNews(news));
-newsContainer.append(...newsElements);
+const formCreate = document.getElementById('createNews');
+const newsContainer = document.querySelector('.news')
+
+
+// const newsElements = newsData.map((news) => createNews(news));
+// newsContainer.append(...newsElements);
+renderNews(newsContainer, newsData)
+
+function renderNews(rootElem, array) {
+  const newsElements = array.map((news) => createNews(news));
+  rootElem.append(...newsElements);
+}
 
 function createNews({ title, date, content }) {
   return createElement(
@@ -11,9 +21,6 @@ function createNews({ title, date, content }) {
     createElement('span', { classNames: ["newsDate"] }, document.createTextNode(date || "")),
     createElement('p', { classNames: ["newsContent"] }, document.createTextNode(content || "")));
 }
-
-
-
 
 function createElement(
   tagName,
