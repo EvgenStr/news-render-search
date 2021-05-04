@@ -20,6 +20,7 @@ function addNews(e) {
   }
   newItem.date = getDate();
   newsData.push(newItem);
+  e.target.reset();
   renderNews(newsContainer, newsData);
 };
 
