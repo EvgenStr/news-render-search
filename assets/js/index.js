@@ -1,7 +1,6 @@
 'use strict';
 
-
-const newsElements = newsArray.map((news) => renderNews(news));
+const newsElements = newsData.map((news) => renderNews(news));
 newsContainer.append(...newsElements);
 
 function renderNews({ title, date, content }) {

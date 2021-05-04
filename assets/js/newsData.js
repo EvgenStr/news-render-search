@@ -1,4 +1,4 @@
-let newsArray = [{
+let newsData = [{
   title: "News Title",
   date: "Date",
   content: "News Content",
