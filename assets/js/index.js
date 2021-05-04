@@ -13,9 +13,9 @@ searchField.addEventListener('keyup', searchFromTitle);
 
 //functions
 
-function searchFromTitle({target:{value}}){
-  if(!value) renderNews(newsContainer, newsData);
-  renderNews(newsContainer, newsData.filter(item=>item.title.includes(value)))
+function searchFromTitle({ target: { value } }) {
+  if (!value) renderNews(newsContainer, newsData);
+  renderNews(newsContainer, newsData.filter(item => item.title.includes(value)))
 }
 
 function addNews(e) {
