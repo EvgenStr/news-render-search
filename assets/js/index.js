@@ -1,10 +1,10 @@
 'use strict';
 
 
-const newsElements = newsArray.map((news) => createNews(news));
+const newsElements = newsArray.map((news) => renderNews(news));
 newsContainer.append(...newsElements);
 
-function createNews({ title, date, content }) {
+function renderNews({ title, date, content }) {
   return createElement(
     "article",
     { classNames: ["newsWrap"] }, createElement('h3',
@@ -15,6 +15,8 @@ function createNews({ title, date, content }) {
         { classNames: ["newsContent"] }, document.createTextNode(content || "")))
   );
 }
+
+
 
 
 function createElement(
