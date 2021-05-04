@@ -1,7 +1,23 @@
 'use strict';
-let newsArray = [];
+let newsArray = [{
+  title: "News Title",
+  date: "Date",
+  content: "News Content",
+}, {
+  title: "News Title",
+  date: "Date",
+  content: "News Content",
+}, {
+  title: "News Title",
+  date: "Date",
+  content: "News Content",
+}];
 const newsContainer = document.querySelector('.news')
-
+let newsElem = {
+  title: "News Title",
+  date: "Date",
+  content: "News Content",
+}
 
 
 
@@ -11,12 +27,17 @@ newsContainer.append(...newsElements);
 function createNews(news) {
   return createElement(
     "article",
-    { classNames: ["newsWrap"] } ,createNewsBody(news)   
+    { classNames: ["newsWrap"] }, createNewsBody(news)
   );
 }
 
-function createNewsBody(news){
-  return createElement('h3', { classNames: ["newsTitle"] }, )
+function createNewsBody({ title, date, content }) {
+  const newsBody = createElement('h3',
+    { classNames: ["newsTitle"] }, document.createTextNode(title || ""),
+    createElement('span',
+      { classNames: ["newsDate"] }), document.createTextNode(date || ""),
+    createElement('p',
+      { classNames: ["newsContent"] }))
 }
 
 
