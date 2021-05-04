@@ -6,7 +6,19 @@ const newsContainer = document.querySelector('.news')
 
 // const newsElements = newsData.map((news) => createNews(news));
 // newsContainer.append(...newsElements);
-renderNews(newsContainer, newsData)
+renderNews(newsContainer, newsData);
+formCreate.addEventListener('submit', addNews)
+
+function addNews(e) {
+  e.preventDefault();
+  const data = new FormData(formCreate);
+
+  console.log(dataArray)
+  for (const [name, value] of data) {
+    console.log(name, value)
+  }
+};
+
 
 function renderNews(rootElem, array) {
   const newsElements = array.map((news) => createNews(news));
