@@ -1,9 +1,21 @@
 :root {
   --content-width: 80%;
+  --page-background-color: rgb(255, 226, 131);
+  --white-color: white;
+  --box-shadow: 5px 3px 13px 2px darkgoldenrod;
 }
 
 * {
   box-sizing: border-box;
+}
+body {
+  background-color: var(--page-background-color);
+}
+body>h1{
+text-align: center;
+font-size: 2.5rem;
+font-weight: bolder;
+padding: 20px 0;
 }
 /* header */
 .pageHeader {
@@ -27,8 +39,10 @@
 /* form create news */
 .formSection {
   width: var(--content-width);
-  margin: 0 auto;
+  margin: 25px auto;
   padding: 25px 0;
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
 }
 #createNews {
   display: flex;
@@ -44,20 +58,30 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
-#content{
+#content {
   resize: none;
 }
-.btnsContainer{
+.btnsContainer {
   display: flex;
   justify-content: space-around;
 }
 
 /* news section */
-.news{
+.news {
   width: var(--content-width);
-  margin: 0 auto;
+  margin: 25px auto;
+  padding: 15px 0;
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
 }
-.newsTitle{
+.newsWrap {
+  width: var(--content-width);
+  margin: 25px auto;
+}
+.newsWrap > * {
+  padding: 10px 0;
+}
+.newsTitle {
   font-size: 1.5rem;
   font-weight: bold;
 }
