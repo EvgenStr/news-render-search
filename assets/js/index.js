@@ -1,9 +1,9 @@
 'use strict';
 
-const newsElements = newsData.map((news) => renderNews(news));
+const newsElements = newsData.map((news) => createNews(news));
 newsContainer.append(...newsElements);
 
-function renderNews({ title, date, content }) {
+function createNews({ title, date, content }) {
   return createElement(
     "article",
     { classNames: ["newsWrap"] },
