@@ -4,20 +4,13 @@ const formCreate = document.getElementById('createNews');
 const newsContainer = document.querySelector('.news');
 const searchField = document.getElementById('search');
 
-//init render
-renderNews(newsContainer, newsData);
-
-// handlers
 formCreate.addEventListener('submit', addNews);
 searchField.addEventListener('keyup', searchFromTitle);
 
-//functions
+//INIT RENDER
+renderNews(newsContainer, newsData);
 
-function searchFromTitle({ target: { value } }) {
-  if (!value) renderNews(newsContainer, newsData);
-  renderNews(newsContainer, newsData.filter(item => item.title.includes(value)))
-}
-
+// EVENT HANDLERS
 function addNews(e) {
   e.preventDefault();
   const data = new FormData(e.target);
@@ -30,6 +23,12 @@ function addNews(e) {
   renderNews(newsContainer, newsData);
 };
 
+function searchFromTitle({ target: { value } }) {
+  if (!value) renderNews(newsContainer, newsData);
+  renderNews(newsContainer, newsData.filter(item => item.title.toLowerCase().includes(value.toLowerCase())));
+}
+
+//FUNCTIONS
 function renderNews(rootElem, array) {
   rootElem.textContent = "";
   const newsElements = array.map((news) => createNews(news));
@@ -52,15 +51,12 @@ function createElement(
 ) {
   const elem = document.createElement(tagName);
   elem.classList.add(...classNames);
-
   for (const [attrName, attrValue] of Object.entries(attributes)) {
     elem.setAttribute(attrName, attrValue);
   }
-
   for (const [eventType, eventHandler] of Object.entries(handlers)) {
     elem.addEventListener(eventType, eventHandler);
   }
-
   elem.append(...children);
   return elem;
 }
