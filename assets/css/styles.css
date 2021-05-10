@@ -17,7 +17,8 @@ body > h1 {
   font-weight: bolder;
   padding: 20px 0;
 }
-#toggler{
+#toggler {
+  user-select: none;
   position: fixed;
   bottom: 15px;
   right: 15px;
@@ -30,7 +31,11 @@ body > h1 {
   text-align: center;
   line-height: 40px;
 }
-.hidden{
+#toggler:hover {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in;
+}
+.hidden {
   display: none;
 }
 /* header */
