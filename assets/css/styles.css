@@ -30,10 +30,11 @@ body > h1 {
   font-weight: bolder;
   text-align: center;
   line-height: 40px;
+  transition: all  0.3s linear;
 }
 #toggler:hover {
   transform: rotate(45deg);
-  transition: transform 0.3s ease-in;
+  
 }
 .hidden {
   display: none;
