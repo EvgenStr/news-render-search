@@ -4,6 +4,7 @@ const formCreate = document.getElementById('createNews');
 const newsContainer = document.querySelector('.news');
 const searchField = document.getElementById('search');
 const formTogglerBtn =document.getElementById('toggler');
+// const cancelBtn = document.getElementById('cancel');
 
 formCreate.addEventListener('submit', addNews);
 searchField.addEventListener('keyup', searchFromTitle);
@@ -53,6 +54,7 @@ function createNews({ title, date, content }) {
 
 function formToggler(){
 document.querySelector('.formSection').classList.toggle('hidden');
+formCreate.reset();
 }
 function createElement(
   tagName,
