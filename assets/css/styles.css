@@ -25,6 +25,13 @@ body > h1 {
   height: 40px;
   border-radius: 50%;
   background-color: brown;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  line-height: 40px;
+}
+.hidden{
+  display: none;
 }
 /* header */
 .pageHeader {

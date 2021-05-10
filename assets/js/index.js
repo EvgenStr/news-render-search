@@ -3,10 +3,11 @@
 const formCreate = document.getElementById('createNews');
 const newsContainer = document.querySelector('.news');
 const searchField = document.getElementById('search');
+const formTogglerBtn =document.getElementById('toggler');
 
 formCreate.addEventListener('submit', addNews);
 searchField.addEventListener('keyup', searchFromTitle);
-
+formTogglerBtn.addEventListener('click', formToggler);
 //INIT RENDER
 renderNews(newsContainer, newsData);
 
@@ -50,6 +51,9 @@ function createNews({ title, date, content }) {
     createElement('p', { classNames: ["newsContent"] }, document.createTextNode(content || "")));
 }
 
+function formToggler(){
+document.querySelector('.formSection').classList.add('hidden');
+}
 function createElement(
   tagName,
   { classNames = [], handlers = {}, attributes = {} } = {},
