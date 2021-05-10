@@ -52,7 +52,7 @@ function createNews({ title, date, content }) {
 }
 
 function formToggler(){
-document.querySelector('.formSection').classList.add('hidden');
+document.querySelector('.formSection').classList.toggle('hidden');
 }
 function createElement(
   tagName,
